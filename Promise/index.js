@@ -1,32 +1,35 @@
 /**
  * @Author: Pacific_D
  * @Date: 2022-04-02 10:38:37
- * @LastEditTime: 2022-04-02 17:06:15
+ * @LastEditTime: 2022-04-08 11:10:51
  * @LastEditors: Pacific_D
  * @Description: 
  * @FilePath: \Promise\index.js
  */
 const MyPromise = require('./MyPromise')
 
-let promise = new MyPromise((resolve, reject) => {
+let promise1 = new MyPromise((resolve, reject) => {
     // resolve("success")
     // throw new Error('Exception: Error')
     //异步宏任务
     setTimeout(() => {
-        resolve("success")
+        // resolve("success")
+        reject('error')
     });
 })
 
-promise.then((value) => {
+promise1.then((value) => {
     console.log('FulFilled1: ' + value)
+    return 1
 }, (reason) => {
-    console.log('22')
-    console.log('Rejected1: ' + reason);
+    console.log('Rejected1: ' + reason)
+    return reason
 })
 
-promise.then((value) => {
+let promise2 = promise1.then((value) => {
     console.log('FulFilled2: ' + value)
 }, (reason) => {
-    console.log('22')
-    console.log('Rejected2: ' + reason);
+    console.log('Rejected2: ' + reason)
 })
+
+console.log(promise2);
