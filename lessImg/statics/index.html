@@ -1,0 +1,50 @@
+<!--
+ * @Author: Pacific_D
+ * @Date: 2022-07-15 16:42:08
+ * @LastEditTime: 2022-07-16 15:47:47
+ * @LastEditors: Pacific_D
+ * @Description: 
+ * @FilePath: \lessImg\statics\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+    <div class="area">
+        <div class="drag">
+            <p>拖拽上传</p>
+        </div>
+        <div class="paste" contenteditable="true">
+            <p>粘贴上传</p>
+        </div>
+    </div>
+    <form class="root" enctype="multipart/form-data" enctype="multipart/form-data">
+        <input type="file" id="fileUploader" name="fileUploader" />
+        <input type="file" id="multipleUploader" name="multipleUploader" multiple />
+        <input type="button" id="sumbit" value="上传" class="button"></input>
+        <input type="button" id="cancel" value="取消" class="button">
+        <div class="progress">
+            <div class="loaded"></div>
+            <div class="pre-view">
+                <img src="" alt="">
+            </div>
+            <div class="loaded-info">
+                <h5>上传进度：</h5>
+                <p></p>
+            </div>
+        </div>
+    </form>
+</body>
+<script src="./initial.js"></script>
+<script src="./ajax.js"></script>
+<script src="./index.js"></script>
+
+</html>
